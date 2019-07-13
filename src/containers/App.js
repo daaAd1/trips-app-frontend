@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Router } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 import GlobalStyles from '../globalStyles';
 import Routes from '../Routes';
 import AppTitle from '../components/AppTitle';
@@ -21,18 +23,24 @@ const ChildrenWrapper = styled.div`
 `;
 
 function App() {
+  const history = createBrowserHistory({
+    basename: process.env.PUBLIC_URL,
+  });
+
   return (
     <>
       <GlobalStyles />
-      <Wrapper>
-        <Header>
-          <AppTitle />
-          <AppMenu />
-        </Header>
-        <ChildrenWrapper>
-          <Routes />
-        </ChildrenWrapper>
-      </Wrapper>
+      <Router history={history}>
+        <Wrapper>
+          <Header>
+            <AppTitle />
+            <AppMenu />
+          </Header>
+          <ChildrenWrapper>
+            <Routes />
+          </ChildrenWrapper>
+        </Wrapper>
+      </Router>
     </>
   );
 }
