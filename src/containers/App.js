@@ -20,6 +20,7 @@ const Header = styled.div`
 const ChildrenWrapper = styled.div`
   margin: 0 auto;
   text-align: center;
+  padding: 20px;
 `;
 
 function App() {

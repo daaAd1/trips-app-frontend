@@ -1,12 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
+  html {
+    transition: all 0.2s ease 0s;
+  }
+
   body {
     margin: 0;
     padding: 0;
     font-family: 'Lato', sans-serif;
     font-size: 16px;
-    color: #333;
+    color: #444444;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
