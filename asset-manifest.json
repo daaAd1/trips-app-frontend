@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/trips-app-frontend/static/js/main.e848a08b.chunk.js",
-    "main.js.map": "/trips-app-frontend/static/js/main.e848a08b.chunk.js.map",
+    "main.js": "/trips-app-frontend/static/js/main.eecaa488.chunk.js",
+    "main.js.map": "/trips-app-frontend/static/js/main.eecaa488.chunk.js.map",
     "runtime~main.js": "/trips-app-frontend/static/js/runtime~main.dd7fea44.js",
     "runtime~main.js.map": "/trips-app-frontend/static/js/runtime~main.dd7fea44.js.map",
-    "static/js/2.7ada31ea.chunk.js": "/trips-app-frontend/static/js/2.7ada31ea.chunk.js",
-    "static/js/2.7ada31ea.chunk.js.map": "/trips-app-frontend/static/js/2.7ada31ea.chunk.js.map",
+    "static/js/2.963dc7e4.chunk.js": "/trips-app-frontend/static/js/2.963dc7e4.chunk.js",
+    "static/js/2.963dc7e4.chunk.js.map": "/trips-app-frontend/static/js/2.963dc7e4.chunk.js.map",
     "index.html": "/trips-app-frontend/index.html",
-    "precache-manifest.3aa5f12c0aa44d8226894bc13a13c19b.js": "/trips-app-frontend/precache-manifest.3aa5f12c0aa44d8226894bc13a13c19b.js",
+    "precache-manifest.c82a64ff939fc9c8bc7dde91c320abe6.js": "/trips-app-frontend/precache-manifest.c82a64ff939fc9c8bc7dde91c320abe6.js",
     "service-worker.js": "/trips-app-frontend/service-worker.js"
   }
 }
