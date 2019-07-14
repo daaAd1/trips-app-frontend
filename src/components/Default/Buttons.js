@@ -9,8 +9,11 @@ export const PrimaryButton = styled.button`
   padding: 8px 16px;
   background-color: transparent;
   border: 1px solid #444444;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
+
+  display: flex;
+  justify-content: center;
 
   -webkit-box-shadow: 3px 3px 2px #777;
   -moz-box-shadow: 3px 3px 2px #777;

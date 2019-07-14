@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import { Auth } from 'aws-amplify';
 import { FlexRow } from '../components/Default/Flex';
 
 const Wrapper = styled(FlexRow)``;
@@ -96,6 +97,12 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const LogoutFlexRow = styled(FlexRow)`
+  margin-bottom: 20px;
+  margin-right: 15px;
+  cursor: pointer;
+`;
+
 const Title = styled.p`
   font-size: 1.1em;
   text-align: center;
@@ -103,37 +110,46 @@ const Title = styled.p`
   margin: 0;
 `;
 
-const PlaneIcon = styled.img`
+const Icon = styled.img`
   width: 24px;
   height: 24px;
   margin-right: 5px;
 `;
 
-export default () => (
-  <Wrapper>
-    {true && (
-      <StyledLink to="/login">
-        <FlexRow>
-          <PlaneIcon src="icons/person_ios.svg" />
-          <Title>Login</Title>
-        </FlexRow>
-      </StyledLink>
-    )}
-    {false && (
-      <>
-        <StyledLink to="/trips">
+const AppMenu = ({ childProps: { isLoggedIn, setIsLoggedIn }, history }) => {
+  const logOut = async () => {
+    await Auth.signOut();
+    setIsLoggedIn(false);
+    history.push('/login');
+  };
+
+  return (
+    <Wrapper>
+      {isLoggedIn ? (
+        <>
           <FlexRow>
-            <PlaneIcon src="icons/list_ios.svg" />
-            <Title>Your trips</Title>
+            <StyledLink to="/trips">
+              <FlexRow>
+                <Icon src="icons/list_ios.svg" />
+                <Title>Your trips</Title>
+              </FlexRow>
+            </StyledLink>{' '}
+            <LogoutFlexRow onClick={logOut}>
+              <Icon src="icons/logout_ios.svg" />
+              <Title>Logout</Title>
+            </LogoutFlexRow>
+          </FlexRow>
+        </>
+      ) : (
+        <StyledLink to="/login">
+          <FlexRow>
+            <Icon src="icons/person_ios.svg" />
+            <Title>Login</Title>
           </FlexRow>
         </StyledLink>
-        <StyledLink to="/signout">
-          <FlexRow>
-            <PlaneIcon src="icons/logout_ios.svg" />
-            <Title>Sign out</Title>
-          </FlexRow>
-        </StyledLink>
-      </>
-    )}
-  </Wrapper>
-);
+      )}
+    </Wrapper>
+  );
+};
+
+export default withRouter(AppMenu);

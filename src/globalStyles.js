@@ -36,6 +36,14 @@ const GlobalStyles = createGlobalStyle`
   input[type='file'] {
     width: 100%;
   }
+
+  a {
+    color: #444444;
+
+    &:hover {
+      color: #ccc;
+    }
+  }
 `;
 
 export default GlobalStyles;
