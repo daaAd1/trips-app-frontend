@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "039f5a2d057aaef923485a49eec8331d",
+    "revision": "d22f3a66eeccf18e9a20072c99696176",
     "url": "/trips-app-frontend/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/trips-app-frontend/static/js/2.b8cdad05.chunk.js"
   },
   {
-    "revision": "c92d43268332a8dfc35b",
-    "url": "/trips-app-frontend/static/js/main.6f31b426.chunk.js"
+    "revision": "781638b21c81b5f18a8c",
+    "url": "/trips-app-frontend/static/js/main.a4871139.chunk.js"
   },
   {
     "revision": "192d2baf0ca15ff71667",
