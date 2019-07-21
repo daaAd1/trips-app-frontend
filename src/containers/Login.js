@@ -48,11 +48,11 @@ const LoggingLoader = styled(Loader)`
   margin-left: 5px;
 `;
 
-const Login = ({ history, setIsLoggedIn, isLoggedIn }) => {
+const Login = ({ history, setIsLoggedIn }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const validateForm = () => {
     return email.length > 0 && password.length > 0;
@@ -62,13 +62,13 @@ const Login = ({ history, setIsLoggedIn, isLoggedIn }) => {
     event.preventDefault();
 
     try {
-      setLoading(true);
+      setIsLoading(true);
       await Auth.signIn(email, password);
-      setLoading(false);
+      setIsLoading(false);
       setIsLoggedIn(true);
       history.push('/');
     } catch (e) {
-      setLoading(false);
+      setIsLoading(false);
       setError(e.message);
     }
   };
@@ -93,7 +93,7 @@ const Login = ({ history, setIsLoggedIn, isLoggedIn }) => {
           name="password"
         />
         <LoginButton disabled={!validateForm()} type="submit">
-          {loading ? (
+          {isLoading ? (
             <>
               {'Logging in ...'}
               <LoggingLoader />

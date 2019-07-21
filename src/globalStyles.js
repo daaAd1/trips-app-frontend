@@ -41,7 +41,7 @@ const GlobalStyles = createGlobalStyle`
     color: #444444;
 
     &:hover {
-      color: #ccc;
+      opacity: 0.7;
     }
   }
 `;

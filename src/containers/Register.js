@@ -35,7 +35,7 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const validateForm = () => {
     return email.length > 0 && password.length > 0 && password === confirmPassword;
@@ -45,16 +45,16 @@ const Register = () => {
     event.preventDefault();
 
     try {
-      setLoading(true);
+      setIsLoading(true);
       const newUser = await Auth.signUp({
         username: email,
         password: password,
       });
-      setLoading(false);
+      setIsLoading(false);
       console.log({ newUser });
       alert('Signed in');
     } catch (e) {
-      setLoading(false);
+      setIsLoading(false);
       setError(e.message);
     }
   };
@@ -87,7 +87,7 @@ const Register = () => {
           name="confirm-password"
         />
         <RegisterButton disabled={!validateForm()} type="submit">
-          {loading ? <Loader /> : 'Create an account'}
+          {isLoading ? <Loader /> : 'Create an account'}
         </RegisterButton>
       </StyledForm>
     </Wrapper>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { HashRouter as Router } from 'react-router-dom';
-import { createHashHistory } from 'history';
+// import { createHashHistory } from 'history';
 import { Auth } from 'aws-amplify';
 import GlobalStyles from '../globalStyles';
 import Routes from '../Routes';
@@ -9,7 +9,7 @@ import AppTitle from '../components/AppTitle';
 import AppMenu from '../components/AppMenu';
 
 const Wrapper = styled.div`
-  margin: 20px;
+  /* margin: 20px; */
 `;
 
 const Header = styled.div`
@@ -31,7 +31,7 @@ function App() {
   const [isLoggingIn, setIsLoggingIn] = useState(true);
 
   useEffect(() => {
-    async function getCurrentUser() {
+    const getCurrentUser = async () => {
       try {
         await Auth.currentSession();
         setIsLoggedIn(true);
@@ -42,13 +42,14 @@ function App() {
       }
 
       setIsLoggingIn(false);
-    }
+    };
+
     getCurrentUser();
   });
 
-  const history = createHashHistory({
-    basename: process.env.PUBLIC_URL,
-  });
+  // const history = createHashHistory({
+  //   basename: process.env.PUBLIC_URL,
+  // });
 
   const childProps = {
     isLoggedIn,
@@ -59,7 +60,8 @@ function App() {
     !isLoggingIn && (
       <>
         <GlobalStyles />
-        <Router history={history}>
+        {/* <Router history={history}> */}
+        <Router>
           <Wrapper>
             <Header>
               <AppTitle />
